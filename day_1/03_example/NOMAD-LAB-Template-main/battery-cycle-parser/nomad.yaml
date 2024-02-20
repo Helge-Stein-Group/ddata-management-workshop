@@ -1,0 +1,19 @@
+normalize:
+  normalizers:
+    include:
+      - MetainfoNormalizer
+plugins:
+  include: 'parsers/batterycycleparser'
+  options:
+    parsers/batterycycleparser:
+      python_package: batterycycleparser
+
+#ui:
+#  apps:
+#    options:
+#      entries:
+#        label: Battery Cycles
+#        path: batterycycles
+#        schemas:
+#          include:
+#            - "batterycycleparser.schema.EntrySection"

@@ -1,0 +1,7 @@
+services:
+  worker:
+    volumes:
+      - ./battery-cycle-parser/batterycycleparser:/app/plugins/batterycycleparser
+  app:
+    volumes:
+      - ./battery-cycle-parser/batterycycleparser:/app/plugins/batterycycleparser

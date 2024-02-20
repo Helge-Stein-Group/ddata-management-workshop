@@ -1,0 +1,6 @@
+plugin_type: parser
+name: parsers/batterycycleparser
+mainfile_name_re: .+
+parser_class_name: batterycycleparser.BatteryCycleParser
+
+code_name: Battery Cycle Parser
