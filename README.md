@@ -1,4 +1,4 @@
-TUM-Nat Dta Management Workshop
+TUM-Nat Data Management Workshop
 =============================
 
 First you need to install Nomad-lab to start developing your own parser!
