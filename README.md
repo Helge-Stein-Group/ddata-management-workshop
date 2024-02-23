@@ -50,7 +50,7 @@ Getting Started
 Once you've completed the installation steps, you can start using Nomad-Lab by running `python` in your terminal and then importing the package:
 
 ```
-import nomad_lab
+import nomad
 ```
 Hopefully this works without errors
 
