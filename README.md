@@ -73,29 +73,13 @@ pip install -U numpy
 MacOS specific additional errors
 -----------------------
 
- In order to fix the `AttributeError: module 'numpy' has no attribute 'float128'` error upon importing EntryArchive from nomad, you can modify the `utils` function initialization in the `nomad/metainfo/util.py` file as follows:
-```python
-try:
-    float_numpy = {np.float16, np.float32, np.float64, np.longdouble}
-except AttributeError:
-    # numpy does not have a longdouble attribute, use the largest available dtype instead
-    float_numpy = {np.float16, np.float32, np.float64}
-
-if os.name == 'nt':
-    float_numpy.discard(np.float128)
-```
-
-To find the exact location of the util.py file simply try importing 
+You will get an error upon importing 
 
 ```python
 from nomad.datamodel import EntryArchive, EntryMetadata
 ```
-which will try to import it and fail but give you the exact location of the file you need to change :-).
 
-This code first attempts to create a set of all available floating-point data types in numpy, including `np.longdouble`. If this attribute is not available (as in the case of macOS or certain versions of 
-Python), it instead creates a set with only the available float data types up to `np.float64`.
-
-The rest of the code checks if the operating system is Windows and removes `np.float128` from the set, since this data type is not supported on Windows either.
+To fix it you will need to replace all 'numpy.float128' with 'numpy.longdouble' and all 'numpy.complex128' with 'numpy.complex64'. Your errormessage will refer to a file like nomad/metainfo/util.py which you will need to open and then simply to a search and replace for the float128 and complex128.
 
 By using this modified initialization, you can ensure that your code will work across different platforms and versions of numpy without raising an `AttributeError`.
 
