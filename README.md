@@ -18,6 +18,12 @@ Before we begin, make sure you have the following installed:
 Installing Nomad Lab
 --------------------
 
+YOU NEED TO HAVE THE LATEST CONDA
+
+```
+conda update -n base conda
+```
+
 To install Nomad Lab and its dependencies, follow these steps:
 
 1. Create a new Conda environment named `nomad` with Python 3.9 (higher versions are not currently supported):
@@ -54,7 +60,15 @@ import nomad
 ```
 Hopefully this works without errors
 
-
+If you have persisting errors with numpy we recommend the following:
+Install cython via
+```
+pip install cython
+```
+then reinstall the latest numpy:
+```
+pip install -U numpy
+```
 
 MacOS specific additional errors
 -----------------------
