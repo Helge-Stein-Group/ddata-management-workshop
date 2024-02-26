@@ -83,6 +83,12 @@ To fix it you will need to replace all 'numpy.float128' with 'numpy.longdouble' 
 
 By using this modified initialization, you can ensure that your code will work across different platforms and versions of numpy without raising an `AttributeError`.
 
+Then you need to do the same in:
+
+nomad/datamodel/metainfo/simulation/method.py
+
+nomad/datamodel/metainfo/simulation/calculation.py
+
 
 Making Conda faster
 -----------------------
