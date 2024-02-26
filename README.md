@@ -84,3 +84,23 @@ Python), it instead creates a set with only the available float data types up to
 The rest of the code checks if the operating system is Windows and removes `np.float128` from the set, since this data type is not supported on Windows either.
 
 By using this modified initialization, you can ensure that your code will work across different platforms and versions of numpy without raising an `AttributeError`.
+
+
+Making Conda faster
+-----------------------
+
+Run these three commands to make conda work better:
+
+```python
+conda update -n base conda
+```
+
+
+```python
+conda install -n base conda-libmamba-solver
+```
+
+
+```python
+conda config --set solver libmamba
+```
