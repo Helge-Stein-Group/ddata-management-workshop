@@ -41,7 +41,7 @@ To install Nomad Lab and its dependencies, follow these steps:
 4. Finally, install Nomad-Lab from the conda-forge channel:
 
    ```
-   conda install conda-forge::nomad-lab
+   conda install conda-forge::nomad-lab==1.2.1
    ```
 
 Getting Started
